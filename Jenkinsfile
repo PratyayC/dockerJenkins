@@ -23,7 +23,7 @@ pipeline {
            steps {
                    withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'dockerhubPassword', usernameVariable: 'dockerhubUser')]) {
           sh "docker login -u ${env.dockerhubUser} -p ${env.dockerhubPassword}"
-          sh 'docker push pratyayc/space-management-system:latest'
+          sh 'docker push pratyay/space-management-system:latest'
 
  
 
