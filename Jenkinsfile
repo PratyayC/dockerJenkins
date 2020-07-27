@@ -15,7 +15,7 @@ pipeline {
     	stage('Docker Build') {
     	agent any
     		steps{
-    		    sh 'docker build -t pratyay/space-management-system:latest .'
+    		    sh 'docker build -t pratyayc/space-management-system:latest .'
     		}
     	}
     	stage('Docker Push') {
@@ -23,7 +23,7 @@ pipeline {
            steps {
                    withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'dockerhubPassword', usernameVariable: 'dockerhubUser')]) {
           sh "docker login -u ${env.dockerhubUser} -p ${env.dockerhubPassword}"
-          sh 'docker push pratyay/space-management-system:latest'
+          sh 'docker push pratyayc/space-management-system:latest'
 
  
 
